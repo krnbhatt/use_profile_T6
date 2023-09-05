@@ -1,0 +1,33 @@
+<div class="container edit-profile">
+  <h2>Edit Profile</h2>
+  <form #data="ngForm" (submit)="onFormSubmit()">
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" class="form-control" #name="ngModel" [(ngModel)]="updatedUser.name" name="name"
+        placeholder="Enter Your Name..." required />
+        <span *ngIf="name.invalid" style="color: red;">Please Enter Your Name</span>
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" #email="ngModel" [(ngModel)]="updatedUser.email" name="email"
+        placeholder="Enter Your Email..." required />
+        <span *ngIf="email.invalid" style="color: red;">Please Enter Your Email</span>
+    </div>
+    <div>
+      <label for="number">Number:</label>
+      <input type="text" class="form-control" #number="ngModel" [(ngModel)]="updatedUser.number" name="number"
+        placeholder="Enter Your Number..." required />
+        <span *ngIf="number.invalid" style="color: red;">Please Enter Your Number</span>
+    </div>
+    <div>
+      <label for="role">Role:</label>
+      <input type="text" class="form-control" #role="ngModel" [(ngModel)]="updatedUser.role" name="role"
+        placeholder="Enter Your Role..." required />
+        <span *ngIf="role.invalid" style="color: red;">Please Enter Your Role</span>
+    </div>
+    <div class="d-flex justify-content-center">
+      <button type="submit" class="btn btn-success" [disabled]="data.invalid">Save</button>
+      <button type="reset" class="btn btn-success mx-2">Reset</button>
+    </div>
+  </form>
+</div>
